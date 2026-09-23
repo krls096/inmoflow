@@ -282,27 +282,26 @@
     .stat span{font-size:13px;color:#c9d6cc;line-height:1.5;display:block}
 
     /* ============ Testimonios ============ */
-    .stars{color:var(--star);letter-spacing:3px;font-size:13px;margin-bottom:12px}
+    /*.stars{color:var(--star);letter-spacing:3px;font-size:13px;margin-bottom:12px}
     .quote{font-size:13px;line-height:1.65;color:#5d696f}
     .person{display:flex;align-items:center;gap:10px;margin-top:20px}
     .person .avatar{width:34px;height:34px;font-size:9px}
     .person strong{font-size:11px}
-    .person span{font-size:10px;color:var(--muted);display:block}
+    .person span{font-size:10px;color:var(--muted);display:block} */
 
-    /* ============ Precios ============ */
-    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
-    .plan{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
-    .plan:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .plan.featured{border-color:#aab9af;box-shadow:var(--shadow);margin-top:-10px;margin-bottom:10px}
-    .plan.featured:hover{transform:translateY(-10px)}
-    .badge{position:absolute;top:-12px;left:24px;background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:800}
-    .plan h3{margin:0;font-size:17px}
-    .plan .desc{font-size:11px;color:var(--muted);margin:6px 0 18px}
-    .price{font-size:38px;font-weight:800;letter-spacing:-.05em}
-    .price small{font-size:11px;color:var(--muted);font-weight:500}
-    .plan ul{margin:24px 0;padding:0;list-style:none;display:grid;gap:11px;font-size:12px;color:#687278}
-    .plan li:before{content:"✓";color:var(--accent);font-weight:800;margin-right:8px}
-    .plan .btn{width:100%}
+    /* ============ Presupuesto ============ */
+    .budget{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:42px;align-items:stretch}
+    .budget-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:14px;transition:transform .35s var(--ease),box-shadow .35s}
+    .budget-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .budget-range{border-color:#aab9af;box-shadow:var(--shadow)}
+    .budget-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--accent)}
+    .budget-range .price{font-size:clamp(30px,3.4vw,42px);font-weight:800;letter-spacing:-.05em}
+    .budget-explain{font-size:13px;color:var(--muted);margin:0}
+    .budget-note{font-size:11.5px;color:var(--muted);margin:0;text-align:center}
+    .budget-card h3{margin:0;font-size:17px}
+    .budget-list{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:16px}
+    .budget-list li{display:grid;gap:2px}
+    .budget-list span{color:var(--muted);font-size:12px}
 
     /* ============ FAQ ============ */
     .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:42px}
@@ -548,7 +547,7 @@
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#caracteristicas">Características</a>
         <a href="#proceso">Cómo funciona</a>
-        <a href="#precios">Precios</a>
+        <a href="#precios">Presupuesto</a>
         <a href="#faq">FAQ</a>
         <a class="only-mobile" href="#contacto">Solicita una demo →</a>
       </nav>
@@ -620,20 +619,28 @@
     </section>
 
     <!-- ============ Integraciones ============ -->
-    <div class="logos" aria-label="Integraciones con portales y canales">
+    <div class="logos" aria-label="Integraciones con canales y herramientas">
       <div class="container" data-reveal>
-        <p class="logos-caption">Integrado con los portales y canales que ya utilizas</p>
+        <p class="logos-caption">Integrado con los canales y herramientas que ya utilizas</p>
         <div class="logos-viewport">
           <div class="logos-track">
             <div class="logos-set">
-              <span class="logo-item">Idealista</span>
-              <span class="logo-item">Fotocasa</span>
-              <span class="logo-item">Habitaclia</span>
-              <span class="logo-item">pisos.com</span>
-              <span class="logo-item">Milanuncios</span>
               <span class="logo-item">WhatsApp</span>
+              <span class="logo-item">Facebook</span>
+              <span class="logo-item">Instagram</span>
               <span class="logo-item">Google</span>
+              <span class="logo-item">Stripe</span>
               <span class="logo-item">Meta</span>
+              <span class="logo-item">Zapier</span>
+            </div>
+            <div class="logos-set" aria-hidden="true">
+              <span class="logo-item">WhatsApp</span>
+              <span class="logo-item">Facebook</span>
+              <span class="logo-item">Instagram</span>
+              <span class="logo-item">Google</span>
+              <span class="logo-item">Stripe</span>
+              <span class="logo-item">Meta</span>
+              <span class="logo-item">Zapier</span>
             </div>
           </div>
         </div>
@@ -727,9 +734,9 @@
     </section>
 
     <!-- ============ Testimonios ============ -->
-    <section class="section" id="opiniones">
-      <div class="container">
-        <div class="section-head" data-reveal>
+    <!--<section class="section" id="opiniones">
+      //<div class="container">
+        //<div class="section-head" data-reveal>
           <div class="section-kicker">Lo que dicen nuestros clientes</div>
           <h2>Inmobiliarias que ya confían en InmoFlow</h2>
         </div>
@@ -751,37 +758,36 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- ============ Precios ============ -->
-    <section class="section section-soft pricing" id="precios">
+    <!-- ============ Presupuesto ============ -->
+    <section class="section section-soft" id="precios">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div class="section-kicker">Precios</div>
-          <h2>Elige el plan que mejor se adapte a ti</h2>
-          <p class="section-lead">Sin permanencia. Cancela cuando quieras.</p>
-        </div>
-        <div class="plans stagger">
-          <article class="plan">
-            <h3>Básico</h3><div class="desc">Ideal para empezar</div>
-            <div class="price">99€<small>/mes</small></div>
-            <ul><li>Hasta 1 usuario</li><li>CRM y pipeline de ventas</li><li>Formularios y landing page</li><li>Soporte por email</li></ul>
-            <a class="btn btn-secondary" href="#contacto">Empezar ahora</a>
-          </article>
-          <article class="plan featured">
-            <span class="badge">Más popular</span>
-            <h3>Profesional</h3><div class="desc">La opción más completa</div>
-            <div class="price">149€<small>/mes</small></div>
-            <ul><li>Hasta 3 usuarios</li><li>Automatizaciones avanzadas</li><li>WhatsApp Business</li><li>Calendario de visitas</li><li>Informes y métricas</li></ul>
-            <a class="btn btn-primary" href="#contacto">Empezar ahora <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-          <article class="plan">
-            <h3>Premium</h3><div class="desc">Para grandes equipos</div>
-            <div class="price">249€<small>/mes</small></div>
-            <ul><li>Usuarios ilimitados</li><li>Integraciones personalizadas</li><li>Soporte prioritario</li><li>Formación incluida</li><li>Acceso a nuevas funcionalidades</li></ul>
-            <a class="btn btn-secondary" href="#contacto">Empezar ahora</a>
-          </article>
-        </div>
+          <div class="section-kicker">Presupuesto</div>
+        <h2>Sin planes fijos.<br>Pagas solo lo que necesitas.</h2>
+        <p class="section-lead">Cada proyecto es distinto: desde una web sencilla hasta un sistema completo con CRM y automatizaciones. Cuéntanos tu caso y te enviamos un presupuesto a medida, sin compromiso.</p>
+      </div>
+
+      <div class="budget stagger">
+        <article class="budget-card budget-range">
+          <span class="budget-label">Rango orientativo</span>
+          <div class="price">100€ — 1.500€</div>
+          <p class="budget-explain">El precio final depende de lo que necesite tu proyecto. No vendemos packs: hablamos contigo y te damos un presupuesto cerrado.</p>
+          <a class="btn btn-primary btn-block" href="#contacto">Cuéntanos y te damos presupuesto <span class="arrow" aria-hidden="true">→</span></a>
+          <p class="budget-note">Sin compromiso · Respuesta en menos de 24 h</p>
+        </article>
+
+        <article class="budget-card">
+          <h3>¿Qué influye en el precio?</h3>
+          <ul class="budget-list">
+            <li><strong>Web o landing de captación</strong><span>Una página sencilla parte desde 100 €.</span></li>
+            <li><strong>CRM y pipeline de ventas</strong><span>Adaptado a tu proceso comercial.</span></li>
+            <li><strong>Automatizaciones</strong><span>Seguimiento por WhatsApp, email, recordatorios…</span></li>
+            <li><strong>Integraciones</strong><span>Formularios, calendario, WhatsApp Business, etc.</span></li>
+          </ul>
+        </article>
+      </div>
       </div>
     </section>
 
@@ -871,7 +877,7 @@
           <h4>Producto</h4>
           <a href="#caracteristicas">Características</a>
           <a href="#proceso">Cómo funciona</a>
-          <a href="#precios">Precios</a>
+          <a href="#precios">Presupuesto</a>
           <a href="#faq">Preguntas frecuentes</a>
         </nav>
         <nav aria-label="Empresa">

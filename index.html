@@ -868,7 +868,7 @@
           <input type="hidden" name="_subject" value="🔥 Nueva solicitud de demo — InmoFlow">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://inmoflow.es/gracias.html">
+          <input type="hidden" name="_next" value="https:google.com">
           <!-- Honeypot anti-spam: los bots lo rellenan, los humanos no lo ven -->
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -1127,23 +1127,6 @@
         }, 650);
       }, 4800);
     }
-
-    /* ---------- Formulario de demo (mailto) ---------- */
-    const form = $('#demoForm');
-    form && form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const d = new FormData(form);
-      const subject = encodeURIComponent('Solicitud de demo — ' + (d.get('nombre') || 'Inmobiliaria'));
-      const body = encodeURIComponent(
-        'Nombre: ' + (d.get('nombre') || '—') +
-        '\nEmail: ' + (d.get('email') || '—') +
-        '\nTeléfono: ' + (d.get('telefono') || '—') +
-        '\n\nMensaje:\n' + (d.get('mensaje') || '—') +
-        '\n\n— Enviado desde la web de InmoFlow'
-      );
-      window.location.href = 'mailto:hola@inmoflow.es?subject=' + subject + '&body=' + body;
-      showToast('Abriendo tu aplicación de correo… Si no se abre, escríbenos a hola@inmoflow.es');
-    });
   })();
   </script>
 </body>

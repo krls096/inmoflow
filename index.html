@@ -842,7 +842,11 @@
           </ul>
           <p class="contact-alt">¿Prefieres escribirnos directamente? <a href="mailto:hola@inmoflow.es">hola@inmoflow.es</a></p>
         </div>
-        <form class="contact-form" id="demoForm" data-reveal style="--d:.15s">
+        <form class="contact-form" id="demoForm"
+          action="https://formsubmit.co/hola@inmoflow.es"
+          method="POST"
+          data-reveal style="--d:.15s">
+
           <div class="form-row">
             <label>Nombre y apellidos*
               <input type="text" name="nombre" placeholder="María García" autocomplete="name" required>
@@ -851,12 +855,23 @@
               <input type="email" name="email" placeholder="maria@inmobiliaria.es" autocomplete="email" required>
             </label>
           </div>
+
           <label>Teléfono
             <input type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
           </label>
+
           <label>Tu inmobiliaria
             <textarea name="mensaje" rows="4" placeholder="Nº de agentes, portales donde publicáis, leads que recibís al mes…"></textarea>
           </label>
+
+          <!-- Config de FormSubmit -->
+          <input type="hidden" name="_subject" value="🔥 Nueva solicitud de demo — InmoFlow">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://inmoflow.es/gracias.html">
+          <!-- Honeypot anti-spam: los bots lo rellenan, los humanos no lo ven -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
           <button class="btn btn-primary btn-block" type="submit">Solicitar demo <span class="arrow" aria-hidden="true">→</span></button>
           <small class="form-note">Al enviar aceptas nuestra <a href="#">política de privacidad</a>. Nada de spam.</small>
         </form>

@@ -361,19 +361,6 @@
     .footer-legal a{color:#8fa096;transition:color .2s}
     .footer-legal a:hover{color:#fff}
 
-    /* ============ CTA fijo en móvil ============ */
-    .mobile-cta{display:none}
-    @media (max-width:700px){
-      .mobile-cta{
-        display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;
-        padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));
-        background:rgba(251,251,248,.94);backdrop-filter:blur(10px);
-        border-top:1px solid var(--line);box-shadow:0 -10px 26px rgba(36,52,45,.08);
-      }
-      body{padding-bottom:76px}
-      .to-top{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
-    }
-
     /* ============ Botón subir + toast ============ */
     .to-top{
       position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;z-index:60;
@@ -421,7 +408,7 @@
       .hero{padding-top:66px}
       .hero-grid{gap:52px}
       .hero-visual{min-height:580px;max-width:620px;width:100%;margin:0 auto}
-      .features{grid-template-columns:repeat(2,1fr)}
+      .features,.testimonials,.plans{grid-template-columns:repeat(2,1fr)}
       .faq-grid{grid-template-columns:1fr}
       .stats-grid{grid-template-columns:repeat(2,1fr);gap:36px 20px}
       .stat{border-left:0;padding:0}
@@ -461,7 +448,7 @@
       .bubble{font-size:11px}
       .chat-input{font-size:10px}
 
-      .features{grid-template-columns:1fr}
+      .features,.testimonials,.plans{grid-template-columns:1fr}
       .section{padding:72px 0}
       .stats{padding:52px 0}
       .step strong{font-size:15px}
@@ -476,6 +463,7 @@
       .showcase-card strong{font-size:14px}
       .showcase-card ul{margin-top:10px;gap:6px;font-size:12px}
 
+      .plan.featured{margin-top:0;margin-bottom:0}
       .form-row{grid-template-columns:1fr}
     }
     @media (max-width: 560px){
@@ -506,8 +494,8 @@
         "name": "InmoFlow",
         "url": "https://inmoflow.es/",
         "logo": "https://inmoflow.es/icon.svg",
-        "email": "hola@inmoflow.es",
-        "contactPoint": {"@type": "ContactPoint", "contactType": "Ventas", "email": "hola@inmoflow.es", "availableLanguage": ["es"]}
+        "email": "krls096mus@gmail.com",
+        "contactPoint": {"@type": "ContactPoint", "contactType": "Ventas", "email": "krls096mus@gmail.com", "availableLanguage": ["es"]}
       },
       {
         "@type": "WebSite",
@@ -524,27 +512,21 @@
         "inLanguage": "es",
         "description": "CRM inmobiliario todo en uno con captación de leads, seguimiento automático por WhatsApp, calendario de visitas e informes.",
         "featureList": ["Captación de leads multicanal","CRM inmobiliario","Automatizaciones de seguimiento","WhatsApp Business","Calendario de visitas","Informes y métricas"],
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "EUR",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "minPrice": "100",
-            "maxPrice": "1500",
-            "priceCurrency": "EUR"
-          },
-          "description": "Presupuesto a medida según el alcance del proyecto (web/landing, CRM, automatizaciones e integraciones)."
-        }
+        "offers": [
+          {"@type": "Offer", "name": "Básico", "price": "99", "priceCurrency": "EUR"},
+          {"@type": "Offer", "name": "Profesional", "price": "149", "priceCurrency": "EUR"},
+          {"@type": "Offer", "name": "Premium", "price": "249", "priceCurrency": "EUR"}
+        ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {"@type": "Question", "name": "¿Necesito tener conocimientos técnicos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Nosotros nos encargamos de toda la configuración inicial y te formamos con sesiones prácticas. En menos de una hora, tu equipo domina el día a día del sistema."}},
-          {"@type": "Question", "name": "¿Hay permanencia mínima?", "acceptedAnswer": {"@type": "Answer", "text": "No hay permanencia ni cuotas obligatorias: no vendemos planes cerrados, te hacemos un presupuesto único para tu proyecto. Si más adelante quieres ampliarlo o necesitas mantenimiento, lo hablamos aparte, sin compromisos."}},
+          {"@type": "Question", "name": "¿Hay permanencia mínima?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todos los planes son mensuales y puedes cancelar cuando quieras desde tu panel, sin penalizaciones ni trámites."}},
           {"@type": "Question", "name": "¿Puedo usar mi número de WhatsApp actual?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Conectamos tu número mediante la API oficial de WhatsApp Business, de modo que conservas tus conversaciones y tu perfil verificado."}},
           {"@type": "Question", "name": "¿Cuánto tarda la implementación?", "acceptedAnswer": {"@type": "Answer", "text": "Menos de 7 días. En la primera semana tienes el sistema configurado, tu equipo formado y tus primeras automatizaciones activas."}},
-          {"@type": "Question", "name": "¿Qué pasa si no estoy satisfecho?", "acceptedAnswer": {"@type": "Answer", "text": "Antes de pagar nada verás una demo personalizada con tus propios casos de uso, así sabes exactamente qué vas a recibir. Al ser un proyecto cerrado y no una suscripción, no hay cuotas de las que darte de baja."}},
-          {"@type": "Question", "name": "¿Ofrecéis soporte?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Todo proyecto incluye soporte por email durante el primer mes tras la entrega. Si necesitas soporte prioritario y continuo por WhatsApp o teléfono, lo incluimos en el presupuesto a medida."}}
+          {"@type": "Question", "name": "¿Qué pasa si no estoy satisfecho?", "acceptedAnswer": {"@type": "Answer", "text": "Antes de contratar verás una demo personalizada con tus propios casos de uso. Y al no existir permanencia, puedes darte de baja cuando quieras."}},
+          {"@type": "Question", "name": "¿Ofrecéis soporte?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Todos los planes incluyen soporte por email. Los planes Profesional y Premium añaden soporte prioritario por WhatsApp y teléfono."}}
         ]
       }
     ]
@@ -615,7 +597,7 @@
             <div class="dash-table" id="leadTable">
               <div class="lead-row"><div class="avatar" style="--av:#7d9c88">LM</div><div><div class="lead-name">Laura Martínez</div><div class="lead-meta">Valencia · 180.000 €</div></div><div class="status">Interesado</div></div>
               <div class="lead-row"><div class="avatar" style="--av:#a08f74">CR</div><div><div class="lead-name">Carlos Ruiz</div><div class="lead-meta">Paterna · 250.000 €</div></div><div class="status yellow">Contactando</div></div>
-              <div class="lead-row"><div class="avatar" style="--av:#74889b">AL</div><div><div class="lead-name">Ana López</div><div class="lead-meta">Torrent · 320.000 €</div></div><div class="status">Interesado</div></div>
+              <div class="lead-row"><div class="avatar" style="--av:#74889b">AL</div><div><div class="lead-name">Ana López</div><div class="lead-meta">Torrent · 320.000 €</div></div><div class="status">Visita</div></div>
               <div class="lead-row"><div class="avatar" style="--av:#9b7f8b">JG</div><div><div class="lead-name">Javier García</div><div class="lead-meta">Valencia · 310.000 €</div></div><div class="status blue">Lead nuevo</div></div>
             </div>
           </div>
@@ -744,7 +726,7 @@
     <!-- ============ Estadísticas ============ -->
     <section class="stats" aria-label="Resultados de nuestros clientes">
       <div class="container stats-grid stagger">
-        <div class="stat"><strong data-count="40" data-prefix="+">+40</strong><span>% más leads cualificados con seguimiento automático</span></div>
+        <div class="stat"><strong data-count="40" data-prefix="+">+40</strong><span>% de leads cualificados con seguimiento automático</span></div>
         <div class="stat"><strong data-count="5" data-prefix="&lt;" data-suffix=" min">&lt;5 min</strong><span>tiempo de respuesta objetivo</span></div>
         <div class="stat"><strong data-count="7" data-suffix=" días">7 días</strong><span>para tener tu sistema operativo</span></div>
         <div class="stat"><strong>24/7</strong><span>seguimiento automático de tus leads</span></div>
@@ -752,10 +734,9 @@
     </section>
 
     <!-- ============ Testimonios ============ -->
-    <!-- Reactivar solo cuando haya testimonios reales de clientes.
-    <section class="section" id="opiniones">
-      <div class="container">
-        <div class="section-head" data-reveal>
+    <!--<section class="section" id="opiniones">
+      //<div class="container">
+        //<div class="section-head" data-reveal>
           <div class="section-kicker">Lo que dicen nuestros clientes</div>
           <h2>Inmobiliarias que ya confían en InmoFlow</h2>
         </div>
@@ -810,7 +791,7 @@
       </div>
     </section>
 
-    <!-- ============ FAQ ============ -->
+     <!-- ============ FAQ ============ -->
     <section class="section" id="faq">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -843,8 +824,8 @@
             <div class="answer" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>Sí. Todo proyecto incluye soporte por email durante el primer mes tras la entrega. Si necesitas soporte prioritario y continuo por WhatsApp o teléfono, lo incluimos en el presupuesto a medida.</p></div></div>
           </div>
         </div>
-        <p class="faq-note" data-reveal>¿Tienes otra duda? Escríbenos a <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@096matics.com" target="_blank"
-            rel="noopener noreferrer">contacto@096matics.com</a> y te respondemos en menos de 24 h laborables.</p>
+        <p class="faq-note" data-reveal>¿Tienes otra duda? Escríbenos a <a href="https://mail.google.com/mail/?view=cm&fs=1&to=krls096mus@gmail.com" target="_blank"
+            rel="noopener noreferrer">krls096mus@gmail.com</a> y te respondemos en menos de 24 h laborables.</p>
       </div>
     </section>
 
@@ -860,13 +841,11 @@
             <li>Sin compromiso y sin tarjeta de crédito</li>
             <li>Propuesta a medida en menos de 48 horas</li>
           </ul>
-          <p class="contact-alt">¿Prefieres escribirnos directamente? <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@096matics.com" target="_blank"
-            rel="noopener noreferrer">contacto@096matics.com</a></p>
+          <p class="contact-alt">¿Prefieres escribirnos directamente? <a href="https://mail.google.com/mail/?view=cm&fs=1&to=krls096mus@gmail.com" target="_blank"
+            rel="noopener noreferrer">krls096mus@gmail.com</a></p>
         </div>
-        <!-- IMPORTANTE: antes de publicar, verifica hola@inmoflow.es en FormSubmit
-             (te llegará un email de confirmación la primera vez que se envíe el formulario) -->
         <form class="contact-form" id="demoForm"
-          action="https://formsubmit.co/contacto@096matics.com"
+          action="https://formsubmit.co/krls096mus@gmail.com"
           method="POST"
           data-reveal style="--d:.15s">
 
@@ -891,12 +870,12 @@
           <input type="hidden" name="_subject" value="🔥 Nueva solicitud de demo — InmoFlow">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://inmoflow.es/gracias.html">
+          <input type="hidden" name="_next" value="https://inmoflow.vercel.app">
           <!-- Honeypot anti-spam: los bots lo rellenan, los humanos no lo ven -->
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
           <button class="btn btn-primary btn-block" type="submit">Solicitar demo <span class="arrow" aria-hidden="true">→</span></button>
-          <small class="form-note">Al enviar aceptas nuestra <a href="privacidad.html">política de privacidad</a>. Nada de spam.</small>
+          <small class="form-note">Al enviar aceptas nuestra <a href="#">política de privacidad</a>. Nada de spam.</small>
         </form>
       </div>
     </section>
@@ -909,8 +888,8 @@
         <div class="footer-brand">
           <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true"></span><span>InmoFlow</span></a>
           <p>El sistema todo en uno para inmobiliarias: captación de leads, CRM y seguimiento automático por WhatsApp.</p>
-          <a class="footer-mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@096matics.com" target="_blank"
-            rel="noopener noreferrer">contacto@096matics.com</a>
+          <a class="footer-mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=krls096mus@gmail.com" target="_blank"
+          rel="noopener noreferrer">krls096mus@gmail.com</a>
         </div>
         <nav aria-label="Producto">
           <h4>Producto</h4>
@@ -923,8 +902,8 @@
           <h4>Empresa</h4>
           <a href="#opiniones">Opiniones</a>
           <a href="#contacto">Solicita una demo</a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@096matics.com" target="_blank"
-            rel="noopener noreferrer">Contacto</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=krls096mus@gmail.com" target="_blank"
+          rel="noopener noreferrer">Contacto</a>
         </nav>
         <div>
           <h4>Atención al cliente</h4>
@@ -934,14 +913,10 @@
       </div>
       <div class="footer-bottom">
         <span>© <span id="year">2025</span> InmoFlow. Todos los derechos reservados.</span>
-        <span class="footer-legal"><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></span>
+        <span class="footer-legal"><a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a></span>
       </div>
     </div>
   </footer>
-
-  <div class="mobile-cta">
-    <a class="btn btn-primary btn-block" href="#contacto">Solicita una demo gratuita <span class="arrow" aria-hidden="true">→</span></a>
-  </div>
 
   <button class="to-top" id="toTop" type="button" aria-label="Volver arriba">
     <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
@@ -1113,8 +1088,7 @@
     /* ---------- Leads entrando "en directo" en el panel (FLIP) ---------- */
     const table = $('#leadTable');
     const pill = $('#leadPill');
-    const dashboardVisible = window.matchMedia('(min-width: 701px)').matches;
-    if (table && pill && !reduceMotion && dashboardVisible) {
+    if (table && pill && !reduceMotion) {
       const feed = [
         { ini: 'MF', name: 'Marta Ferrer',  meta: 'Gandía · 195.000 €',   cls: 'blue',   label: 'Lead nuevo' },
         { ini: 'DS', name: 'Diego Sanchís', meta: 'Valencia · 420.000 €', cls: 'yellow', label: 'Contactando' },
